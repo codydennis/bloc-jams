@@ -51,15 +51,17 @@ body {
      text-transform: uppercase;
      text-decoration: none;
      cursor: pointer;
+     transition: all .40s ease-out;
  }
 
- .links-container .navbar-link:hover {
+ .links-container .navbar-link:hover,
+ .links-container .navbar-link:focus {
      color: rgb(233,50,117);
+     background-color: #fff;
  }
 
  .links-container .navbar-link:active {
-   color: rgb(233,50,117);
-   background-color: white;
+   color: rgb(58,23,63);
  }
 
 
