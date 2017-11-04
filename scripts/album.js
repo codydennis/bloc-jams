@@ -77,6 +77,7 @@ var albumPicasso = {
      }
  };
 
+/*
  var findParentByClassName = function(element, targetClass) {
    if(element) {
      var currentParent = element.parentElement;
@@ -86,6 +87,32 @@ var albumPicasso = {
      return currentParent;
    }
  }
+*/
+
+var findParentByClassName = function(element, targetClass) {
+  if(element) {
+    var currentParent = element.parentElement;
+
+
+    if(currentParent == null) {
+      console.log("No parent found")
+      return null;
+    }
+
+    while (currentParent.className !== targetClass && currentParent.className !== null) {
+      currentParent == currentParent.parentElement;
+    }
+
+    if(currentParent == null || currentParent.className != targetClass) {
+      console.log("No parent found with that class name");
+    };
+
+    return currentParent;
+    
+  }
+
+};
+
 
  var getSongItem = function(element) {
     switch (element.className) {
