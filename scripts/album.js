@@ -1,6 +1,6 @@
 var setSong = function(songNumber) {
-  currentlyPlayingSongNumber = parseInt(songNumber);
-  currentSongFromAlbum = currentAlbum.songs[songNumber -1];
+    currentlyPlayingSongNumber = parseInt(songNumber);
+    currentSongFromAlbum = currentAlbum.songs[songNumber -1];
 };
 
 var getSongNumberCell = function(number) {
@@ -22,22 +22,21 @@ var clickHandler = function() {
     var songNumber = parseInt($(this).attr('data-song-number'));
 
     if (setSong !== null) {
+
         var currentlyPlayingCell = getSongNumberCell(setSong);
         currentlyPlayingCell.html(setSong);
     }
     if (setSong !== songNumber) {
 
         $(this).html(pauseButtonTemplate);
-        setSong(songNumber);
-        currentSongFromAlbum = currentAlbum.songs[songNumber - 1];
+        setSong = songNumber;
+        setSong = currentAlbum.songs[songNumber - 1];
         updatePlayerBarSong();
 
     } else if (setSong === songNumber) {
-
         $(this).html(playButtonTemplate);
         $('.main-controls .play-pause').html(playerBarPlayButton);
         setSong = null;
-        currentSongFromAlbum = null;
     }
 };
 
@@ -114,7 +113,7 @@ var nextSong = function() {
 
 
 var previousSong = function() {
-    var currentSongIndex = trackIndex(currentAlbum, setSong;
+    var currentSongIndex = trackIndex(currentAlbum, setSong);
     // Note that we're _decrementing_ the index here
     currentSongIndex--;
 
@@ -163,8 +162,8 @@ var playerBarPauseButton = '<span class="ion-pause"></span>';
 
 // Store state of playing songs
 var currentAlbum = null;
-var currentlyPlayingSongNumber = null;
-var currentSongFromAlbum = null;
+var setSong = null;
+var setSong = null;
 
 var $previousButton = $('.main-controls .previous');
 var $nextButton = $('.main-controls .next');
